@@ -1,5 +1,20 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "/assets/*": [
+        "assets/*"
+      ],
+      "/components/*": [
+        "components/*"
+      ],
+      "/pages/*": [
+        "pages/*"
+      ],
+      "/styles/*": [
+        "styles/*"
+      ]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -18,7 +33,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "styled-components"
+    ]
   },
   "include": [
     "src"
