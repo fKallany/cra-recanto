@@ -15,7 +15,7 @@ const Banner = () => {
           <div className="c-banner__texts__text">
             <h1 className="c-banner__texts__text__title">Tão moderno quanto envelhecer!</h1>
             <p className="c-banner__texts__text__description">Com segurança, assistência e uma equipe capacitada pronta para atender!</p>
-            <a className="c-banner__texts__text__button" href="https://www.instagram.com/recanto_da_vida_sorocaba/" target='_blank'>Contato</a>
+            <a className="c-banner__texts__text__button" href="https://www.instagram.com/recanto_da_vida_sorocaba/" target='_blank' rel="noreferrer">Contato</a>
           </div>
         </div>
       </div>

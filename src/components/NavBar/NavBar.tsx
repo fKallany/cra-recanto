@@ -78,10 +78,10 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="c-nav__socials">
-          <a href='https://www.instagram.com/recanto_da_vida_sorocaba/' target='_blank'>
+          <a href='https://www.instagram.com/recanto_da_vida_sorocaba/' target='_blank' rel="noreferrer">
             <FontAwesomeIcon className='c-nav__socials__social' icon={faInstagram} />
           </a>
-          <a href='https://pt-pt.facebook.com/Recantodavidasorocaba/' target='_blank'>
+          <a href='https://pt-pt.facebook.com/Recantodavidasorocaba/' target='_blank' rel="noreferrer">
             <FontAwesomeIcon className='c-nav__socials__social' icon={faFacebookSquare} />
           </a>
         </div>
