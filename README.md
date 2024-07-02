@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# Recanto da Vida
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao Recanto da Vida, um site dedicado a um lar de idosos em Sorocaba, SP, Brasil.
 
-## Available Scripts
+## Visão Geral
 
-In the project directory, you can run:
+Este projeto serve como o site oficial do "Recanto da Vida", fornecendo informações e recursos para residentes, famílias e cuidadores. Construído com tecnologias web modernas, oferece uma interface amigável e navegação tranquila.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React**: Uma biblioteca JavaScript para construir interfaces de usuário.
+- **TypeScript**: Um superset tipado do JavaScript que compila para JavaScript puro.
+- **Styled Components**: Uma biblioteca CSS-in-JS para estilizar componentes React.
+- **React Router DOM**: Uma biblioteca de roteamento para aplicações React.
+- **Polished**: Um conjunto de ferramentas leve para escrever estilos em JavaScript.
+- **Font Awesome**: Ícones vetoriais personalizáveis.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Dependências
 
-### `npm test`
+### Produção
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```json
+{
+  "@fortawesome/fontawesome-svg-core": "^6.5.2",
+  "@fortawesome/free-brands-svg-icons": "^6.5.2",
+  "@fortawesome/free-solid-svg-icons": "^6.5.2",
+  "@fortawesome/react-fontawesome": "^0.2.2",
+  "@testing-library/jest-dom": "^5.17.0",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "polished": "^4.3.1",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router-dom": "^6.24.0",
+  "react-scripts": "5.0.1",
+  "styled-components": "^6.1.11",
+  "typescript": "^4.9.5",
+  "web-vitals": "^2.1.4"
+}
+```
 
-### `npm run build`
+### Desenvolvimento
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json 
+{
+  "@types/jest": "^27.5.2",
+  "@types/node": "^16.18.101",
+  "@types/react": "^18.3.3",
+  "@types/react-dom": "^18.3.0",
+  "@types/react-router-dom": "^5.3.3",
+  "react-app-rewired": "^2.2.1"
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalação
 
-### `npm run eject`
+1. **Clone o Repositório**:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+git clone https://github.com/fKallany/cra-recanto.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Navegue até o Diretório do Projeto:**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+cd cra-recanto
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Instale as Dependências:**:
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Scripts Disponíveis
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `npm start`: Inicia o aplicativo em modo de desenvolvimento.
+- `npm run build`: Compila o aplicativo para produção.
+- `npm test`: Executa testes.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para obter detalhes.
