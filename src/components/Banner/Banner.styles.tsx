@@ -10,6 +10,7 @@ export const Container = styled.header<ContainerProps>`
   width: 100%;
   max-width: 100vw;
   position: relative;
+  overflow: hidden;
 
   .c-banner {
     width: 100%;
@@ -103,11 +104,29 @@ export const Container = styled.header<ContainerProps>`
         }
       }
     }
-  }
 
-  @media (max-width: 1440px) {
-    .c-banner {
+    @media (max-width: 1440px) {
       background-position: center;
+    }
+
+    @media (max-width: 768px) {
+      .c-banner {
+        &__texts {
+          &__text {
+            gap: 20px;
+
+            &__title {
+              font-size: 42px;
+              line-height: 50px;
+            }
+
+            &__description {
+              font-size: 18px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
     }
   }
 `;

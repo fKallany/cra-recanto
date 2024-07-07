@@ -1,16 +1,14 @@
-/**
- * @copyright 2024 Fabio Kallany Silva Santos. Todos os direitos reservados.
- * @license MIT
- */
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
-import { Container } from './NavBar.styles';
+import { Container, HamburgerIcon } from './NavBar.styles';
 import logo from '/assets/img/recanto-da-vida-logo.png';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -29,6 +27,18 @@ const NavBar = () => {
     };
   }, []);
 
+  const handleMenuToggle = () => {
+    if (isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 700);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
+
   return (
     <Container className={isScrolled ? 'background-scrolled' : ''}>
       <div className="c-nav">
@@ -39,7 +49,7 @@ const NavBar = () => {
             alt="Logo recanto da vida Sorocaba"
           />
         </div>
-        <div className="c-nav__items">
+        <div className={`c-nav__items ${isMenuOpen ? 'open' : ''} ${isMenuClosing ? 'closing' : ''} ${isScrolled ? 'scrolled' : ''}`}>
           <Link
             to="/"
             className={`c-nav__items__item ${currentPath === '/' ? 'active' : ''}`}
@@ -85,6 +95,11 @@ const NavBar = () => {
             <FontAwesomeIcon className='c-nav__socials__social' icon={faFacebookSquare} />
           </a>
         </div>
+        <HamburgerIcon onClick={handleMenuToggle}>
+          <div />
+          <div />
+          <div />
+        </HamburgerIcon>
       </div>
     </Container>
   );

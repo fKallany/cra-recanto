@@ -1,10 +1,45 @@
-/**
- * @copyright 2024 Fabio Kallany Silva Santos. Todos os direitos reservados.
- * @license MIT
- */
-import styled from 'styled-components';
-
+import styled, { keyframes } from 'styled-components';
 import { ContainerProps } from './NavBar.types';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+`;
 
 export const Container = styled.nav<ContainerProps>`
   position: fixed;
@@ -12,7 +47,7 @@ export const Container = styled.nav<ContainerProps>`
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.7s ease;
   background-color: transparent;
 
   &.background-scrolled {
@@ -40,10 +75,11 @@ export const Container = styled.nav<ContainerProps>`
     align-items: center;
     background-color: transparent;
     width: 100%;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.7s ease;
 
     &__images {
       height: 100%;
+      animation: ${fadeIn} 0.7s ease forwards;
 
       &__image {
         height: 100%;
@@ -56,6 +92,7 @@ export const Container = styled.nav<ContainerProps>`
       display: flex;
       position: relative;
       height: 100%;
+      animation: ${fadeIn} 0.7s ease forwards;
 
       &__item {
         height: 100%;
@@ -77,6 +114,7 @@ export const Container = styled.nav<ContainerProps>`
       display: flex;
       gap: 30px;
       margin-left: 40px;
+      animation: ${fadeIn} 0.7s ease forwards;
       
       &__social {
         font-size: 24px;
@@ -90,5 +128,99 @@ export const Container = styled.nav<ContainerProps>`
         }
       }
     }
+
+    @media (max-width: 1050px) {
+      justify-content: space-between;
+
+      &__items {
+        top: 80px;
+        right: 0;
+        width: 250px;
+        height: 350px;
+        opacity: 0.95;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        transition: all 0.7s ease-in-out;
+        gap: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -25%;
+          left: 0;
+          width: 100%;
+          height: 110vh;
+          background-color: rgba(0, 0, 0, 0.9);
+          backdrop-filter: saturate(180%) blur(20px);
+          z-index: -1;
+        }
+
+        &.scrolled {
+
+          &:before {
+            background-color: rgba(0, 0, 0, .99);
+          }
+        }
+
+        &.open {
+          display: flex;
+          animation: ${slideIn} 0.7s ease forwards;
+        }
+
+        &.closing {
+          animation: ${slideOut} 0.7s ease forwards;
+        }
+
+        &__item {
+          width: 100%;
+          height: 80px;
+          padding: 15px 0;
+          text-align: center;
+          justify-content: center;
+        }
+      }
+
+      &__socials {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1050px) {
+      &__items,
+      &__socials {
+        animation: ${fadeOut} 0.7s ease forwards;
+      }
+
+      &__items {
+        &__item {
+          animation: ${fadeOut} 0.7s ease forwards;
+        }
+      }
+    }
+  }
+`;
+
+export const HamburgerIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  animation: ${fadeIn} 0.7s ease forwards;
+
+  div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-light-color);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  @media (max-width: 1050px) {
+    display: block;
+    animation: ${fadeIn} 0.7s ease forwards;
+    z-index: 20;
+  }
+
+  @media (min-width: 1050px) {
+    animation: ${fadeOut} 0.7s ease forwards;
   }
 `;
